@@ -1,0 +1,12 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1736683362
+::res://assets/::1736609585
+tilemap.tres::TileSet::2918166647320198543::1736609585::0::1::::<><>::uid://dpiakfyd3pbec::::res://assets/tilemap_packed.png
+tilemap_packed.png::CompressedTexture2D::8228627885487687334::1736526394::1736526395::1::::<><>::
+::res://godot-dongon/::1736533772
+::res://scenes/::1736609588
+dungeon.tscn::PackedScene::5118153466936373035::1736609588::0::1::::<><>::uid://bhtt1p0s6ap4j::::res://assets/tilemap.tres
+main.tscn::PackedScene::1347821482869538042::1736609585::0::1::::<><>::uid://bhtt1p0s6ap4j::::res://assets/tilemap.tres<>uid://cgd0atfjcs3pg::::res://scenes/player.tscn
+player.tscn::PackedScene::5201686493375744004::1736543978::0::1::::<><>::res://scripts/player.gd<>uid://dpiakfyd3pbec::::res://assets/tilemap_packed.png
+::res://scripts/::1736543978
+player.gd::GDScript::-1::1736543978::0::1::::<>CharacterBody2D<>::

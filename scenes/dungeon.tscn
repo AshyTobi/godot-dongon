@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://ce6jifih7bm5x"]
+
+[ext_resource type="TileSet" uid="uid://bhtt1p0s6ap4j" path="res://assets/tilemap.tres" id="1_u1eo2"]
+
+[node name="dungeon" type="Node2D"]
+
+[node name="floor" type="TileMapLayer" parent="."]
+tile_set = ExtResource("1_u1eo2")
+
+[node name="walls" type="TileMapLayer" parent="."]
+tile_set = ExtResource("1_u1eo2")
+
+[node name="objects" type="TileMapLayer" parent="."]
+tile_set = ExtResource("1_u1eo2")
