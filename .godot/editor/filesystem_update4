@@ -1,0 +1,7 @@
+res://scenes/main.tscn
+res://assets/tilemap.tres
+res://scenes/player.tscn
+res://scenes/dungeon.tscn
+res://scenes/dungeon.gd
+res://scenes/room.tscn
+res://scripts/player.gd
