@@ -1,9 +1,9 @@
 extends Node2D
 
 
-const DUNGEON_SIZE: Vector2i = Vector2i(368, 384)
+const DUNGEON_SIZE: Vector2i = Vector2i(176, 176)
 const MIN_ROOM_SIZE: int = 16
-const VARIATION: Vector2 = Vector2(0.4, 0.6)
+const VARIATION: Vector2 = Vector2(0.5, 0.5)
 
 class Dungeon:
 	var room: Rect2i
@@ -77,9 +77,8 @@ func _draw():
 	#pass
 
 func drawDungeon(dungeon: Dungeon):
+	draw_rect(dungeon.room, Color.CHOCOLATE, true)
 	draw_rect(dungeon.room, Color(1,1,1), false, 1)
-	if dungeon.leftSection and dungeon.rightSection:
-		draw_rect(dungeon.door, Color(0,1,0))
 	if dungeon.leftSection:
 		drawDungeon(dungeon.leftSection)
 	if dungeon.rightSection:

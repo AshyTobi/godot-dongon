@@ -1,11 +1,14 @@
+ColorRect
+TextureRect
+TileMapLayer
+Line2D
+Label
+TileMap
 Area2D
 CollisionShape2D
-TileMapLayer
-ColorRect
 Node
 Camera2D
 Sprite2D
 CharacterBody2D
 AnimatedSprite2D
-TileMap
 Node3D
