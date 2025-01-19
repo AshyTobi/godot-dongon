@@ -8,7 +8,7 @@ class Room:
 
 @onready var roomsToGenerate: Array = []
 @onready var roomPositions = {}
-@onready var roomAmount = 17
+var roomAmount = 20
 
 
 func _ready():
@@ -19,25 +19,27 @@ func _ready():
 	generate_dungeon()
 
 
-# generates roomAmount rooms + a few extra
 func generate_dungeon():
 	for i in roomAmount:
 		open_doors(roomsToGenerate[i])
 
 
-# tries to open the door in all cardinal directions with a 50% chance
-# and generates a new room in that direction if possible
+# TODO
+# still not very satisfing how this gets generated. i'm sad.
 func open_doors(room):
+	var possibleDirections = []
+	var openRandomAmount = 0
 	for direction in room.doors:
-		# this part needs to be refined
-		# current chance is 50% for all doors, should be flexable
-		# there is a possibility, that all doors are closed.
-		# at least one should be open 
-		if room.doors[direction]:
-			continue
-		room.doors[direction] = randi_range(1,100) <= 40
-		if room.doors[direction] and !room_exists(direction, room.pos):
-			create_new_room(direction, room.pos)
+		if !room.doors[direction] and !room_exists(direction, room.pos):
+			possibleDirections.append(direction)
+	
+	if !possibleDirections.is_empty():
+		openRandomAmount = randi_range(0,possibleDirections.size())
+	
+	for i in openRandomAmount:
+		var randomDirection = possibleDirections.pick_random()
+		possibleDirections.erase(randomDirection)
+		create_new_room(randomDirection, room.pos)
 
 
 func room_exists(direction, pos) -> bool:
@@ -75,4 +77,4 @@ func _draw():
 	for i in roomsToGenerate.size():
 		draw_rect(Rect2i(roomsToGenerate[i].pos * Vector2i(16,16), Vector2i(16,16)), Color.PURPLE, false, 1)
 		draw_string(ThemeDB.fallback_font,roomsToGenerate[i].pos * Vector2i(16,16) + Vector2i(4,12),str(i),HORIZONTAL_ALIGNMENT_LEFT,-1,12)
-		#print("nl")
+		print("nl")
