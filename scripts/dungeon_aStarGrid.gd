@@ -4,13 +4,16 @@ extends Node2D
 var cell_size = Vector2i(16,16)
 var grid_size = Vector2i(15,15)
 var grid = AStarGrid2D.new()
-var start = Vector2i(grid_size.x/2,grid_size.y-1)
-var end = Vector2i(grid_size.x/2,0)
+var start = Vector2i(randi_range(0,grid_size.x-1),grid_size.y-1)
+var end = Vector2i(randi_range(0,grid_size.x-1),0)
 
 
 func _ready():
 	grid_init()
+	for i in 80:
+		place_wall()
 	update_path()
+	$Player.position = start*16 + Vector2i(8,8)
 
 
 func grid_init():
@@ -30,11 +33,15 @@ func _input(event):
 	if event is InputEventMouseButton:
 		# Add/remove wall
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			var pos = Vector2i(event.position / 3) / cell_size
+			var pos = Vector2i(get_global_mouse_position()) / cell_size
 			if grid.is_in_boundsv(pos):
 				grid.set_point_solid(pos, not grid.is_point_solid(pos))
 			update_path()
 			queue_redraw()
+
+
+func place_wall():
+	grid.set_point_solid(Vector2i(randi_range(0,grid_size.x-1),randi_range(1,grid_size.y-2)), true)
 
 
 func _draw():

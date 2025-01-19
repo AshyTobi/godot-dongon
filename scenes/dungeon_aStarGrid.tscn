@@ -10,16 +10,8 @@ script = ExtResource("1_yxdxp")
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_set = ExtResource("2_dvl6l")
 
-[node name="Player" parent="." instance=ExtResource("3_sw5an")]
-position = Vector2(134, 134)
-
-[node name="Camera2D" parent="Player" index="2"]
-limit_left = 0
-limit_top = 0
-limit_right = 267
-limit_bottom = 267
-
 [node name="Line2D" type="Line2D" parent="."]
 width = 4.0
 
-[editable path="Player"]
+[node name="Player" parent="." instance=ExtResource("3_sw5an")]
+position = Vector2(117, 81)

@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=4 uid="uid://cu7iqor30nxyu"]
+[gd_scene load_steps=7 format=4 uid="uid://cu7iqor30nxyu"]
 
 [ext_resource type="TileSet" uid="uid://bhtt1p0s6ap4j" path="res://assets/tilemap.tres" id="1_r6utq"]
+[ext_resource type="PackedScene" uid="uid://cgd0atfjcs3pg" path="res://scenes/player.tscn" id="2_hpl2k"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_bxwhv"]
 font_size = 48
@@ -11,6 +12,9 @@ font_size = 32
 
 [sub_resource type="LabelSettings" id="LabelSettings_falrk"]
 font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jc707"]
+size = Vector2(6, 5)
 
 [node name="preview" type="Node2D"]
 
@@ -162,3 +166,16 @@ boss
 "
 label_settings = SubResource("LabelSettings_falrk")
 horizontal_alignment = 1
+
+[node name="Player" parent="." instance=ExtResource("2_hpl2k")]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" parent="Player" index="1"]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_jc707")
+
+[node name="Camera2D" parent="Player" index="2"]
+zoom = Vector2(1, 1)
+
+[editable path="Player"]

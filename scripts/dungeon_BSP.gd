@@ -77,7 +77,7 @@ func _draw():
 	#pass
 
 func drawDungeon(dungeon: Dungeon):
-	draw_rect(dungeon.room, Color.CHOCOLATE, true)
+	draw_rect(dungeon.room, Color.DARK_KHAKI, true)
 	draw_rect(dungeon.room, Color(1,1,1), false, 1)
 	if dungeon.leftSection:
 		drawDungeon(dungeon.leftSection)

@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=4 uid="uid://tg5om42n6vjm"]
+[gd_scene load_steps=4 format=4 uid="uid://tg5om42n6vjm"]
 
 [ext_resource type="TileSet" uid="uid://bhtt1p0s6ap4j" path="res://assets/tilemap.tres" id="1_nfbm1"]
 [ext_resource type="PackedScene" uid="uid://cgd0atfjcs3pg" path="res://scenes/player.tscn" id="2_ijwl8"]
-[ext_resource type="PackedScene" uid="uid://ce6jifih7bm5x" path="res://scenes/dungeon_BSP.tscn" id="3_1r5f6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2uqdu"]
 
@@ -24,13 +23,9 @@ tile_set = ExtResource("1_nfbm1")
 [node name="Player" parent="." instance=ExtResource("2_ijwl8")]
 position = Vector2(185, 199)
 
-[node name="dungeon" parent="." instance=ExtResource("3_1r5f6")]
-
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(184, 40)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_2uqdu")
-
-[connection signal="area_entered" from="Area2D" to="Player" method="_on_area_2d_area_entered"]

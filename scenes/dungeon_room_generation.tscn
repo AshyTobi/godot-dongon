@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://du3quo5kpi7lp"]
+
+[ext_resource type="Script" path="res://scripts/dungeon_room_generation.gd" id="1_vp4uc"]
+[ext_resource type="TileSet" uid="uid://bhtt1p0s6ap4j" path="res://assets/tilemap.tres" id="2_d64hf"]
+[ext_resource type="PackedScene" uid="uid://cgd0atfjcs3pg" path="res://scenes/player.tscn" id="3_sgu8o"]
+
+[node name="dungeon" type="Node2D"]
+script = ExtResource("1_vp4uc")
+
+[node name="tilemap" type="TileMapLayer" parent="."]
+tile_set = ExtResource("2_d64hf")
+
+[node name="Player" parent="." instance=ExtResource("3_sgu8o")]
+position = Vector2(130, 128)
+collision_layer = 2
+collision_mask = 2
