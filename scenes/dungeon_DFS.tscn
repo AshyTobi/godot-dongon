@@ -1,9 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://cnlofwrnyer8k"]
+[gd_scene load_steps=3 format=3 uid="uid://cnlofwrnyer8k"]
 
 [ext_resource type="Script" path="res://scripts/dfs_dungeon.gd" id="1_ibcr4"]
+[ext_resource type="PackedScene" uid="uid://cgd0atfjcs3pg" path="res://scenes/player.tscn" id="2_jf1y1"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_ibcr4")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
+[node name="Player" parent="." instance=ExtResource("2_jf1y1")]
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
