@@ -1,7 +1,2 @@
 res://scenes/dungeon_DFS.tscn
 res://scripts/dfs_dungeon.gd
-res://scenes/one_room_dungeon.tscn
-res://assets/tilemap.tres
-res://scripts/dungeon_BSP.gd
-res://scenes/dungeon_BSP.tscn
-res://scenes/debug.tscn
